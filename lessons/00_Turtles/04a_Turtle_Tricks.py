@@ -19,5 +19,26 @@ tina = turtle.Turtle()                  # Create a turtle named tina
 # tina.pencolor()
 
 ... # Your code here
+bob=tina.clone()
+tina.pensize(width=10)
+tina.right(120)
+tina.pendown()
+tina.pencolor("blue")
+tina.forward(100)
+
+tina.right(120)
+tina.pencolor("red")
+tina.forward(100)
+
+tina.right(120)
+tina.pencolor("yellow")
+tina.forward(100)
+tina.penup()
+
+tina.write("im the sigma")
+
+bob.pendown()
+bob.fillcolor("yellow")
+bob.circle(40)
 
 turtle.exitonclick()                    # Close the window when we click on it
