@@ -20,7 +20,7 @@ tina = turtle.Turtle()                  # Create a turtle named tina
 
 ... # Your code here
 tina.penup()
-tina.goto(0,50)
+tina.goto(0,110)
 tina.speed(3)
 tina.pensize(width= 20)
 tina.pencolor("green")
