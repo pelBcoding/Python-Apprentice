@@ -9,7 +9,7 @@ directory ) and moves to the corners of the screen in a square pattern.
 """
 # Change the Background Image
 
-Important:
+#Important:
 # The image file can be a GIF or a PNG
 # The image file must be in the `image` directory, and the  `image` directory
 #  must be in the same directory as your program. 
@@ -44,4 +44,4 @@ set_background_image(screen, "emoji.png") # Set the background image of the scre
 
 turtle.exitonclick()      
 
-```
+#```
