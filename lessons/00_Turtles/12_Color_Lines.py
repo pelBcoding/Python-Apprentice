@@ -22,9 +22,10 @@ colors = [ 'red', 'blue', 'black', 'orange']    # define a list of colors
     #tina.left(left)
 
 for color in colors:
-    tina.color(color)
+    tina.color(-color)
     tina.forward(forward)
     tina.left(left) #Make another square, but put the colors in reverse order, using a negative index. 
+
 
  # Your code here
 

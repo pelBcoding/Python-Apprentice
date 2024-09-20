@@ -15,10 +15,8 @@ def getRandomColor():
 
 colors = ["red", "blue", "green", "yellow", "orange"]
 
-
 def getNextColor(i):
     return colors[i % len(colors)]
-
 turtle.setup (width=600, height=600) 
 window = turtle.Screen()
 
