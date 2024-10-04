@@ -28,7 +28,6 @@ Here is how you show the user a message window. The first parameter is the title
 the second is the message to show the user.
 
 messagebox.showinfo('What you are', "You are a baby.")
-
 """
 
 from tkinter import messagebox, simpledialog, Tk # import required modules
@@ -37,12 +36,22 @@ window = Tk()     # Create a window object
 window.withdraw() # Hide the window; we just want to see pop ups
 
 # Ask the user's age
-
+age =  simpledialog.askfloat("Your Age", "How old are you?")
 # Use if statements to determine the age group
 # and create a message
-
+if age <2: 
+    messagebox.showinfo("You are a baby. What da hail are you doing here.")
+elif age>2 and age<4:
+    messagebox.showinfo("You are a child. Can you even read this???")
+elif age>4 and age<12:
+    messagebox.showinfo("You are a kid. You can probably read this and be able to code yourself.")
+elif age>12 and age<20: 
+    messagebox.showinfo("You are a teenager.")
+elif age>20 and age>30:
+    messagebox.showinfo("GO BACK TO COLLEGE!")
 # Show the message to the user
 
+messagebox.showinfo("You are", age,  "You are diddy ready.")
 
 
 window.mainloop()  # Keeps the window open
