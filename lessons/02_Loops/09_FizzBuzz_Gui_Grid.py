@@ -42,20 +42,29 @@ app = App("Numbers Grid", layout="grid")
 
 # Call Text(app, text='...', grid=[col, row], color=...) to display something. 
 
-color = "blue"
-num = 0
+num = 1
 text = ""
 for i in range(10):
     for x in range(10):
-        num+=1
+    
         print(num, end=" ")
-        if x % 15 == 0:
-            print('🐍 snake!')
-        elif x % 5 == 0:
-            print('🦡 badger')
-        elif x % 3 == 0:
-            print('🍄 mushroom')
-        Text(app, text=str(num), grid=[x,i], color = "blue")
-        
-    print()
+        if num % 15 == 0:
+            display_text =  '🐍'
+            color = "black"
+        elif num % 5 == 0:
+            display_text =  '🦡'
+            color = "black"
+
+        elif num % 3 == 0:
+            display_text = '🍄'
+            color = "black"
+        else:
+            display_text = str(num)
+            digit_sum = sum(int(digit) for digit in str(num))
+            if digit_sum % 2 == 0:
+                color = "blue"
+            else:
+                color = "red"
+        Text(app, text=str(display_text), grid=[x,i], color = color)
+        num += 1 
 app.display()
