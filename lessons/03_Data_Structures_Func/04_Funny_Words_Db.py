@@ -29,18 +29,20 @@ def add_definition(db, key, value):
     Add a new definition to the database.
 
     Parameters:
-    - db (dict): The database to add the definition to.
-    - key (str): The key for the new definition.
-    - value (str): The value for the new definition.
+    - db (dict): The database to add the definition to. (dictionary)
+    - key (str): The key for the new definition. (word)
+    - value (str): The value for the new definition. (definition)
 
     Returns:
     - None
 
     If there are already 5 items in the database, an error message is displayed and the new item is not added.
     """
-
+    if len(db) >= 5:
+        error("Too many Items!" , " Your item has not been entered. Your database already has 5 items, please delete one and try again.")
     # Check the limit
-
+    else:
+        
     # Set the item in the database
 
     pass
