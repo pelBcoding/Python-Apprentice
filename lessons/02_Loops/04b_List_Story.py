@@ -14,4 +14,4 @@ story = [words[0], words[2], words[7], words[9], words[7], words[1], words[14], 
 # Create a story using the words in the list
 
 # Display the story to the user
-print(" ".join(story))
+print("".join(story))
