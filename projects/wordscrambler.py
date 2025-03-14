@@ -1,18 +1,17 @@
 # Make a function that scrambles a string and return the scrambled string
 
 import random 
-scrambledword = []
+scrambledword = ""
 def wordscrambler(word):
-    n = list(word) 
-    for i in range(len(n)):
+    n = list(word)
+    
+    for char in range(len(n)):
         
         letter = n.pop(random.randint(0 , len(n) - 1))
         
-        scrambledword.append(letter)
+        scrambledword += letter
         
-        "".join(scrambledword)
-
-    return scrambledword
+    return "".join(scrambledword)
 
 print(wordscrambler("test"))
 
