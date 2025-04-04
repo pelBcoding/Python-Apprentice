@@ -1,4 +1,4 @@
-#imports
+#imports ,
 from guizero import App, Box, PushButton, Text, info
 
 X_MARK = "X"
@@ -15,7 +15,12 @@ def check_row(l):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
         """
-
+    if l[0][0] == l[0][1] and l[0][1] == l[0][2]:
+            return l[0][0]
+    elif l[1][0] == l[1][1] and l[1][1] == l[1][2]:
+            return l[1][0]
+    elif l[2][0] == l[2][1] and l[2][1] == l[2][2]:
+            return l[2][0]
     return None
 
 def check_win(board):
@@ -26,7 +31,12 @@ def check_win(board):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
     """
-
+    if board[0][0] == board[0][1] and board[0][1] == board[0][2]:
+         return board[0][0]
+    elif board[1][0] == board[1][1] and board[1][1] == board[1][2]:
+         return board[1][0]
+    elif board[2][0] == board[2][1] and board[2][1] == board[2][2]:
+        return board[2][0]
     return None
 
 # The following code is the main part of the program. It creates a GUI for the
@@ -52,7 +62,7 @@ class TicTacToe:
         self.message = Text(self.app, text="It is your turn, " + self.current_turn)
 
         self.reset_button = PushButton(self.app, text='Reset', command=self.reset)
-
+ 
         self.message.text_color = "green"
 
         self.win_func = win_func
