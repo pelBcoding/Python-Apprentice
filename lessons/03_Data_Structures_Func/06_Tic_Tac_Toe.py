@@ -15,13 +15,12 @@ def check_row(l):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
         """
-    if l[0][0] == l[0][1] and l[0][1] == l[0][2]:
-            return l[0][0]
-    elif l[1][0] == l[1][1] and l[1][1] == l[1][2]:
-            return l[1][0]
-    elif l[2][0] == l[2][1] and l[2][1] == l[2][2]:
-            return l[2][0]
-    return None
+    
+    if l[0] == l[1] and l[1] == l[2]:
+        return l[0]
+    else:
+        return None
+    
 
 def check_win(board):
     """Check if a player has won on a board
@@ -31,6 +30,10 @@ def check_win(board):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
     """
+    for row in board:
+        print(row)
+        if check_row(row) is not None:
+            return row[0]    
     if board[0][0] == board[0][1] and board[0][1] == board[0][2]:
          return board[0][0]
     elif board[1][0] == board[1][1] and board[1][1] == board[1][2]:
