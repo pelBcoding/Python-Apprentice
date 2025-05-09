@@ -65,11 +65,35 @@ Ex.  Upgrade room, room service, spa package, etc.
 
 
 Have Fun!!! 
-
-
-
-
-
-
 """
+"""
+1 while loop? (while hotel opened?)
+Input to check in guests and put in rooms (append into dictionary?)
+Be able to delete from dic (func)
+Rooms have to be filled. (If room is used, take out of a list of rooms?) + (charge guest for each room)
+If people have more than one room do i put them in a special list?
+People arranged by names
+Rooms have to have some input into how many nights they are booked (Charge accordingly)
+Must have  timer when guests are done with their booking (Do i make an option for them to ADD nights when they are done?)
+Add extra thing AFTER you finish coding the the main thing.
+"""
+hotel_opened = True
+checked_in_rooms = {}
+rooms = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
+def check_in(checked_in_rooms, roomnum, roomname):
+        checked_in_rooms[roomnum] = roomname
+
+
+while hotel_opened:
+    
+    
+    check_in(checked_in_rooms, int(input("Which room number would you like?   ")), input("And what name is the room for?   "))
+    for room in rooms:
+        if room in checked_in_rooms.keys():
+            print(f"Room {room} is checked in")
+        else:
+            print(f"Room {room} is available") 
+    
+
+    hotel_opened = False    
