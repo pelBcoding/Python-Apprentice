@@ -67,9 +67,9 @@ Ex.  Upgrade room, room service, spa package, etc.
 Have Fun!!! 
 """
 """
-1 while loop? (while hotel opened?)
-Input to check in guests and put in rooms (append into dictionary?)
-Be able to delete from dic (func)
+1 while loop? (while hotel opened?) gud
+Input to check in guests and put in rooms (append into dictionary?) gud
+Be able to delete from dic (func) gud
 Rooms have to be filled. (If room is used, take out of a list of rooms?) + (charge guest for each room)
 If people have more than one room do i put them in a special list?
 People arranged by names
@@ -78,22 +78,50 @@ Must have  timer when guests are done with their booking (Do i make an option fo
 Add extra thing AFTER you finish coding the the main thing.
 """
 hotel_opened = True
+
 checked_in_rooms = {}
+
 rooms = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+charge_list = []
+# list of names, assign each person with a charge based on how many rooms for how many nights.
+
 
 def check_in(checked_in_rooms, roomnum, roomname):
         checked_in_rooms[roomnum] = roomname
 
+def charge_customer(amount):
+    
+
+    pass
+
+def pick_action():
+    # make an input that would result in an action (ex. check_in) be called.
+    action = input("What would you like to do?" 
+    " a = check in " 
+    " b = check out ")
+    
+    if action == "a":
+         check_in(checked_in_rooms, int(input("Which room number would you like?   ")), input("And what name is the room for?   "))
+    elif action == "b":
+         del checked_in_rooms[int(input("Which room are you checking out of?   "))]
 
 while hotel_opened:
     
+    pick_action()
     
-    check_in(checked_in_rooms, int(input("Which room number would you like?   ")), input("And what name is the room for?   "))
     for room in rooms:
         if room in checked_in_rooms.keys():
             print(f"Room {room} is checked in")
         else:
             print(f"Room {room} is available") 
     
-
+    pick_action()
+    
+    for room in rooms:
+        if room in checked_in_rooms.keys():
+            print(f"Room {room} is checked in")
+        else:
+            print(f"Room {room} is available")
+    
     hotel_opened = False    
