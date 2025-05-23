@@ -70,16 +70,17 @@ Have Fun!!!
 1 while loop? (while hotel opened?) gud
 Input to check in guests and put in rooms (append into dictionary?) gud
 Be able to delete from dic (func) gud
-Rooms have to be filled. (If room is used, take out of a list of rooms?) + (charge guest for each room)
-If people have more than one room do i put them in a special list?
-People arranged by names
-Rooms have to have some input into how many nights they are booked (Charge accordingly)
+Rooms have to be filled. (If room is used, take out of a list of rooms?) + (charge guest for each room) sort of gud
+If people have more than one room do i put them in a special list? 
+Rooms have to have some input into how many nights they are booked (Charge accordingly) 
 Must have  timer when guests are done with their booking (Do i make an option for them to ADD nights when they are done?)
 Add extra thing AFTER you finish coding the the main thing.
 """
 hotel_opened = True
 
 checked_in_rooms = {}
+
+guests = {}
 
 rooms = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
@@ -89,39 +90,54 @@ charge_list = []
 
 def check_in(checked_in_rooms, roomnum, roomname):
         checked_in_rooms[roomnum] = roomname
+        guests[f"{roomnum} is checked out by"] = str(roomname)
 
-def charge_customer(amount):
+def charge_customer():
+    #copy the value of the roomnum key (AKA THE ROOMNAME) into a string then append it into the charge list. then charge based on the list
+    
+    amount = len(checked_in_rooms)*25
+    
+    return(f"I have ${amount}.")
     
 
-    pass
 
 def pick_action():
     # make an input that would result in an action (ex. check_in) be called.
+    
+    # this is probably the most important part of the hotel manager 
+    
     action = input("What would you like to do?" 
     " a = check in " 
-    " b = check out ")
+    " b = check out "
+    " c = charge "
+    " d = check rooms " )
     
     if action == "a":
+         
          check_in(checked_in_rooms, int(input("Which room number would you like?   ")), input("And what name is the room for?   "))
+    
     elif action == "b":
+         
          del checked_in_rooms[int(input("Which room are you checking out of?   "))]
+    
+    elif action == "c":
+         
+         print(charge_customer())
+    
+    elif action == "d":
+        for room in rooms:
+            if room in checked_in_rooms.keys():
+                print(f"Room {room} is checked in.")
+            else:
+                print(f"Room {room} is available")
+        
+        print(guests)
 
 while hotel_opened:
     
     pick_action()
-    
-    for room in rooms:
-        if room in checked_in_rooms.keys():
-            print(f"Room {room} is checked in")
-        else:
-            print(f"Room {room} is available") 
-    
-    pick_action()
-    
-    for room in rooms:
-        if room in checked_in_rooms.keys():
-            print(f"Room {room} is checked in")
-        else:
-            print(f"Room {room} is available")
+
+    if hotel_opened:
+         continue
     
     hotel_opened = False    
