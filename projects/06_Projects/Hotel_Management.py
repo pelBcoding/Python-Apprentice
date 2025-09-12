@@ -88,9 +88,9 @@ charge_list = []
 # list of names, assign each person with a charge based on how many rooms for how many nights.
 
 
-def check_in(checked_in_rooms, roomnum, roomname):
-        checked_in_rooms[roomnum] = roomname
-        guests[f"{roomnum} is checked out by"] = str(roomname)
+def check_in(checked_in_rooms, roomnum, roomname, roomdays):
+        checked_in_rooms[roomnum] = roomname, roomdays
+        guests[f"{roomnum} is checked out by"] = str(roomname) , [f" for {int(roomdays)} nights."]
 
 def charge_customer():
     #copy the value of the roomnum key (AKA THE ROOMNAME) into a string then append it into the charge list. then charge based on the list
@@ -114,7 +114,7 @@ def pick_action():
     
     if action == "a":
          
-         check_in(checked_in_rooms, int(input("Which room number would you like?   ")), input("And what name is the room for?   "))
+         check_in(checked_in_rooms, int(input("Which room number would you like?   ")), input("And what name is the room for?   "), (input("How many nights are you staying with us?   ")))
     
     elif action == "b":
          
